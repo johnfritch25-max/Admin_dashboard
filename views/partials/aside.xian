@@ -1,0 +1,45 @@
+ <aside 
+            :class="sidebarOpen ? 'w-64' : 'w-20'" 
+            class="bg-slate-900 text-slate-400 flex flex-col transition-all duration-300 ease-in-out fixed inset-y-0 left-0 z-50 md:relative md:translate-x-0"
+        >
+            <!-- Sidebar Header -->
+            <div class="h-16 flex items-center justify-between px-6 border-b border-slate-800 bg-slate-950">
+                <span class="text-white font-bold text-lg tracking-wider" x-show="sidebarOpen">⚡ ADMIN</span>
+                <span class="text-white font-bold text-lg tracking-wider mx-auto" x-show="!sidebarOpen">⚡</span>
+                <button @click="sidebarOpen = !sidebarOpen" class="text-slate-400 hover:text-white focus:outline-none hidden md:block">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+                </button>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
+                <a href="#" class="flex items-center space-x-3 text-white bg-blue-600 px-4 py-2.5 rounded-lg transition-all duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4zM14 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2v-4z" /></svg>
+                    <span x-show="sidebarOpen" class="font-medium">Dashboard</span>
+                </a>
+
+                <a href="#" class="flex items-center space-x-3 hover:bg-slate-800 hover:text-white px-4 py-2.5 rounded-lg transition-all duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                    <span x-show="sidebarOpen">Users</span>
+                </a>
+
+                <a href="#" class="flex items-center space-x-3 hover:bg-slate-800 hover:text-white px-4 py-2.5 rounded-lg transition-all duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10a2 2 0 01-2 2h-2a2 2 0 01-2-2zm9 0v-4a2 2 0 00-2-2h-2a2 2 0 00-2 2v4a2 2 0 002 2h2a2 2 0 002-2z" /></svg>
+                    <span x-show="sidebarOpen">Analytics</span>
+                </a>
+
+                <a href="#" class="flex items-center space-x-3 hover:bg-slate-800 hover:text-white px-4 py-2.5 rounded-lg transition-all duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /></svg>
+                    <span x-show="sidebarOpen">Settings</span>
+                </a>
+            </nav>
+
+            <!-- Sidebar Footer Profile -->
+            <div class="p-4 border-t border-slate-800 bg-slate-950 flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold">JD</div>
+                <div x-show="sidebarOpen" class="flex-1 min-w-0">
+                    <p class="text-sm font-semibold text-white truncate">John Doe</p>
+                    <p class="text-xs text-slate-500 truncate">admin@company.com</p>
+                </div>
+            </div>
+        </aside>

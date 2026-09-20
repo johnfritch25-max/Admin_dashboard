@@ -1,0 +1,43 @@
+/*
+    MIT License
+    
+    Copyright (c) 2025 Christian I. Cabrera || XianFire Framework
+    Mindoro State University - Philippines
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+    */
+import { controllername, sequelize } from "../models/controllername.js";
+
+await sequelize.sync();
+
+const products = [
+  { id: "1", name: "rexona", description: "i won't let you down", category: "anti putok", stock: "26", price: "25" },
+  { id: "2", name: "pancit cantoon", description: "hotchili", category: "capstone", stock: "260", price: "20" },
+  { id: "3", name: "555 tune", description: "pang ulam", category: "delata", stock: "50", price: "27" },
+  { id: "4", name: "mega sardines", description: "delata", category: "delata", stock: "60", price: "26" },
+  { id: "5", name: "wow ulam", description: "deleta", category: "delata", stock: "26", price: "25" }
+];
+
+const controller = {
+  youtube: (req, res) => {
+    res.render("Garcia", { products });
+  }
+};
+
+export { controller };
