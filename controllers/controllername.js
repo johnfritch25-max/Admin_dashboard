@@ -27,11 +27,11 @@ import { controllername, sequelize } from "../models/controllername.js";
 await sequelize.sync();
 
 const products = [
-  { id: "1", name: "rexona", description: "i won't let you down", category: "anti putok", stock: "26", price: "25" },
-  { id: "2", name: "pancit cantoon", description: "hotchili", category: "capstone", stock: "260", price: "20" },
-  { id: "3", name: "555 tune", description: "pang ulam", category: "delata", stock: "50", price: "27" },
-  { id: "4", name: "mega sardines", description: "delata", category: "delata", stock: "60", price: "26" },
-  { id: "5", name: "wow ulam", description: "deleta", category: "delata", stock: "26", price: "25" }
+  { id: "1", name: "Tide", description: "Gulat ka ba?", category: "Pang laba", stock: "26", price: "25" },
+  { id: "2", name: "pancit cantoon", description: "hotchili", category: "Pang Ulam", stock: "260", price: "20" },
+  { id: "3", name: "Joy", description: "Joy to the world", category: "Dishwashing", stock: "50", price: "10" },
+  { id: "4", name: "Century Tuna", description: "sabaw palang ulam na", category: "delata", stock: "60", price: "26" },
+  { id: "5", name: "Lucky Me", description: "Ulam ng mga walang maisip", category: "noodles", stock: "26", price: "10" }
 ];
 
 const controller = {
